@@ -3,9 +3,14 @@ import { AuthState, AuthAction } from "./types";
 const initialState: AuthState = {
   loadingSignInRequest: false,
   isSignedIn: false,
+  error: false,
+  token: ''
 };
 
-export function auth(state = initialState, action: AuthAction) : AuthState {
+export default function auth( 
+  state = initialState, 
+  action: AuthAction 
+) : AuthState {
   switch (action.type) {
     case '@auth/SIGN_IN_REQUEST':
       return {
@@ -16,4 +21,4 @@ export function auth(state = initialState, action: AuthAction) : AuthState {
     default:
       return state;
   }
-}
+} 

@@ -4,6 +4,8 @@ import * as actions from './actions';
 export type AuthAction = ActionType<typeof actions>;
 
 export interface AuthState {
-  readonly isSignedIn: boolean;
   readonly loadingSignInRequest: boolean;
+  readonly isSignedIn: boolean;
+  readonly error: boolean;
+  readonly token: string | null;
 }
