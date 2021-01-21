@@ -10,10 +10,14 @@ import redux from '../../assets/redux.png';
 import './styles.css';
 
 const SignIn: React.FC = () => {
-  const { loadingSignInRequest } = useSelector((state: StoreState) => state.auth);
+  const { 
+    loadingSignInRequest,
+    isSignedIn,
+    token,
+  } = useSelector((state: StoreState) => state.auth);
   const dispatch = useDispatch();
 
-  console.log('Loading:', loadingSignInRequest);
+  console.log('Loading:', token);
   return (
     <div className="sign-in-page">
       <div>
